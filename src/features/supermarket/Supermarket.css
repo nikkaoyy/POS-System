@@ -1,0 +1,216 @@
+.supermarket-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sm-layout {
+  display: flex;
+  gap: var(--sp-6);
+  flex: 1;
+  min-height: 0;
+}
+
+/* 3D Container */
+.sm-floor-plan-3d {
+  flex: 2;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  padding: 0; /* Important for Canvas to fill */
+  background: #0f172a; /* Dark base color for the 3D void */
+}
+
+/* 3D HTML Labels */
+.aisle-3d-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: var(--bg-surface);
+  border: 1px solid var(--c-border);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-full);
+  box-shadow: var(--shadow-lg);
+  transform: translate3d(0, 0, 0);
+  white-space: nowrap;
+  transition: all var(--t-fast);
+}
+
+.aisle-3d-label.selected {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 2px var(--c-accent-l), var(--shadow-xl);
+  transform: scale(1.1);
+}
+
+.aisle-3d-label .aisle-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: var(--fs-xs);
+}
+
+.aisle-name-text {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+}
+
+.aisle-3d-label .aisle-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 2px 6px;
+  font-size: 10px;
+}
+
+/* 3D Interaction Hint */
+.sm-3d-hint {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--c-text-2);
+  pointer-events: none;
+  border: 1px solid var(--c-border);
+}
+
+/* Right Panel */
+.sm-side-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.all-alerts-panel, .category-detail-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-6);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.all-alerts-panel .panel-title {
+  padding: var(--sp-4) var(--sp-6);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.alerts-list, .cat-products-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.alert-item, .cat-prod-item {
+  background: var(--bg-surface-2);
+  border-radius: var(--r-md);
+  padding: var(--sp-4);
+  border: 1px solid var(--c-border);
+  transition: all var(--t-fast);
+}
+
+.alert-item:hover {
+  border-color: var(--c-border-s);
+}
+
+.alert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--sp-2);
+}
+
+.alert-pname {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+
+.alert-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--c-text-3);
+}
+
+/* Highlighted Items */
+.alert-crit {
+  border-color: var(--c-err);
+  background: var(--c-err-l);
+}
+
+.alert-warn {
+  border-color: var(--c-warn);
+  background: var(--c-warn-l);
+}
+
+.cp-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--sp-1);
+}
+
+.cp-name {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+
+.cp-price {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+}
+
+.cp-stock {
+  font-size: var(--fs-xs);
+  color: var(--c-text-3);
+}
+
+.cp-stock strong {
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sm-layout {
+    flex-direction: column;
+  }
+  .sm-floor-plan-3d {
+    min-height: 400px;
+    flex: none;
+  }
+  .sm-side-panel {
+    flex: none;
+    min-height: 300px;
+  }
+}

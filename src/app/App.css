@@ -1,0 +1,29 @@
+/* App.css is mainly empty as most layout is handled by index.css (.app-layout, .app-main) 
+   and component-specific CSS files. */
+.app-layout {
+  display: flex;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden; /* Prevent body scroll, handle scroll in main */
+}
+
+.app-main {
+  flex: 1;
+  margin-left: var(--sidebar-w);
+  padding: var(--sp-8);
+  height: 100dvh;
+  overflow-y: auto;
+  transition: margin-left var(--t-base);
+  background-image: 
+    radial-gradient(circle at 0% 0%, var(--c-accent-l) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, var(--c-info-l) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+@media (max-width: 1024px) {
+  .app-main {
+    margin-left: 0;
+    padding: var(--sp-4);
+    padding-top: calc(var(--sp-16) + var(--sp-4));
+  }
+}
