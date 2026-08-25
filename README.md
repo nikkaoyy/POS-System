@@ -1,6 +1,6 @@
-# FIS
+# Sistema POS
 
-FIS es un sistema de punto de venta para supermercados construido con React, Vite y Three.js. Incluye operaciones de caja, gestión de inventario, historial de ventas, dashboard administrativo y una vista 3D del supermercado.
+El sistema POS es un sistema de punto de venta para supermercados construido con React, Vite y Three.js. Incluye operaciones de caja, gestión de inventario, historial de ventas, dashboard administrativo y una vista 3D del supermercado.
 
 ## Funcionalidades
 
@@ -60,3 +60,11 @@ Estos PIN son únicamente de demostración y no deben utilizarse en un entorno r
 ## Licencia
 
 Este proyecto se distribuye bajo la [Licencia MIT](LICENSE).
+
+## Progresos
+
+Se tiene un frontend sin funcionalidad ni persistencia pero totalmente escalable y robusto construido en react, además, se tiene una una estructura de diagrama de Casos de uso, Historia de Usuario, Secuencia, Actividades y Clases para la construcción del backend que se hara en Springboot, es importante aclarar que este proyecto tendra una base de datos PostgreSQL alojada en la nube mediante los servicios de Supabase.
+
+## Desarrolladores
+
+- Nicolás Martínez Pineda
