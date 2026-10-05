@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: fis-pos-backend
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/fis}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:10}
+      minimum-idle: 2
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+
+app:
+  cors-origin: ${CORS_ORIGIN:http://localhost:5173}
+  tax-rate: ${TAX_RATE:0.16}
