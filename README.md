@@ -55,7 +55,21 @@ Estos PIN son únicamente de demostración y no deben utilizarse en un entorno r
 - `src/features/`: módulos de autenticación, POS, inventario, ventas, dashboard y supermercado.
 - `src/shared/`: componentes, contextos y datos compartidos.
 - `db/`: scripts SQL y documentación del modelo de datos.
+- `backend/`: API REST en Spring Boot para autenticación, catálogo, inventario,
+  ventas y dashboard.
 - `public/`: recursos estáticos.
+
+## Backend Spring Boot
+
+El backend usa Java 25, Maven, JDBC y PostgreSQL/Supabase. Ejecuta primero
+`db/fis_supabase.sql` en la base de datos y consulta `backend/README.md` para
+configurar las variables `DATABASE_URL`, `DATABASE_USERNAME` y
+`DATABASE_PASSWORD`.
+
+```bash
+cd backend
+mvn spring-boot:run
+```
 
 ## Licencia
 
